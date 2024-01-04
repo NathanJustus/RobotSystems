@@ -5,11 +5,10 @@ def parkRight(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
 	car.forward(50)
-	time.sleep(2.5)
+	time.sleep(2)
 	car.stop()
 
-	angleMag = 30
-	angleRange = [-angleMag,angleMag]
+	angleRange = [-30,25]
 	car.set_dir_servo_angle(angleRange[0])
 	time.sleep(0.5)
 
