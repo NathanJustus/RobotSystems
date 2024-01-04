@@ -86,13 +86,13 @@ def veerBackLeft(car):
 	car.set_dir_servo_angle(0)
 
 def kTurnLeft(car):
-	waitTime = 1
+	waitTime = 2
 	car.stop()
-	car.set_dir_servo_angle(30)
+	car.set_dir_servo_angle(20)
 	car.forward(50)
 	time.sleep(waitTime)
 	car.stop()
-	car.set_dir_servo_angle(-30)
+	car.set_dir_servo_angle(-20)
 	car.backward(50)
 	time.sleep(waitTime)
 	car.stop()
