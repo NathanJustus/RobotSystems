@@ -165,6 +165,7 @@ class Picarx(object):
         self.dir_servo_pin.angle(value)
 
     def set_dir_servo_angle(self, value):
+        value = -value
         self.dir_current_angle = constrain(value, self.DIR_MIN, self.DIR_MAX)
         angle_value  = value + self.dir_cali_val
         self.dir_servo_pin.angle(angle_value)
@@ -180,6 +181,7 @@ class Picarx(object):
         self.cam_tilt.angle(value)
 
     def set_cam_pan_angle(self, value):
+        value = -value
         value = constrain(value, self.CAM_PAN_MIN, self.CAM_PAN_MAX)
         self.cam_pan.angle(-1*(value + -1*self.cam_pan_cali_val))
 
