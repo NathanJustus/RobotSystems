@@ -228,7 +228,7 @@ class Picarx(object):
             self.set_motor_speed(2, -1*speed)
 
     def stop(self):
-        logging.debug("Stopping Motors")
+        #logging.debug("Stopping Motors")
         self.set_motor_speed(1, 0)
         self.set_motor_speed(2, 0)
 
