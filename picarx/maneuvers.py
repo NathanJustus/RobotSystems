@@ -43,14 +43,13 @@ def goForward(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
 	car.forward(50)
-	time.sleep(1)
-	car.stop()
+	time.sleep(2)
 
 def veerRight(car):
 	car.stop()
 	car.set_dir_servo_angle(-15)
 	car.forward(50)
-	time.sleep(1)
+	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(0)
 
@@ -58,7 +57,7 @@ def veerLeft(car):
 	car.stop()
 	car.set_dir_servo_angle(15)
 	car.forward(50)
-	time.sleep(1)
+	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(0)
 
@@ -66,14 +65,14 @@ def goBackward(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
 	car.backward(50)
-	time.sleep(1)
+	time.sleep(2)
 	car.stop()
 
 def veerBackRight(car):
 	car.stop()
 	car.set_dir_servo_angle(-15)
 	car.backward(50)
-	time.sleep(1)
+	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(0)
 
@@ -81,7 +80,7 @@ def veerBackLeft(car):
 	car.stop()
 	car.set_dir_servo_angle(15)
 	car.backward(50)
-	time.sleep(1)
+	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(0)
 
