@@ -5,7 +5,7 @@ def parkRight(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
 	car.forward(50)
-	time.sleep(2)
+	time.sleep(1.9)
 	car.stop()
 
 	angleRange = [-30,26]
@@ -24,7 +24,7 @@ def parkLeft(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
 	car.forward(50)
-	time.sleep(2)
+	time.sleep(1.9)
 	car.stop()
 
 	angleRange = [30,-26]
