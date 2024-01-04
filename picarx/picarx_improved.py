@@ -13,6 +13,7 @@ except ImportError:
 import logging
 import atexit
 
+#Testing Git SSH
 logging_format="%(asctime)s: %(message)s"
 logging.basicConfig(format=logging_format,level=logging.INFO,\
     datefmt="%H:%M:%S")
