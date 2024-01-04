@@ -96,9 +96,50 @@ def kTurnLeft(car):
 	time.sleep(3)
 	car.stop()
 	car.set_dir_servo_angle(0)
-	car.forward(100)
+	car.forward(50)
+	time.sleep(1)
+
+def kTurnRight(car):
+	car.stop()
+	car.set_dir_servo_angle(-20)
+	car.forward(50)
+	time.sleep(2)
+	car.stop()
+	car.set_dir_servo_angle(20)
+	car.backward(50)
+	time.sleep(3)
+	car.stop()
+	car.set_dir_servo_angle(0)
+	car.forward(50)
 	time.sleep(1)
 
 if __name__ == "__main__":
 	car = pcx.Picarx()
-	kTurnLeft(car)
+	exitFlag = False
+	while not exitFlag:
+		command = input('Watchu need?\n')
+		match command:
+			case 'parkRight':
+				parkRight(car)
+			case 'parkLeft':
+				parkLeft(car)
+			case 'goForward':
+				goForward(car)
+			case 'veerRight':
+				veerRight(car)
+			case 'veerLeft':
+				veerLeft(car)
+			case 'goBackward':
+				goBackward(car)
+			case 'veerBackRight':
+				veerBackRight(car)
+			case 'veerBackLeft':
+				veerBackLeft(car)
+			case 'kTurnLeft':
+				kTurnLeft(car)
+			case 'kTurnRight':
+				kTurnRight(car)
+			case 'exit':
+				exitFlag = True
+			case _:
+				print('Invalid command\n')
