@@ -195,12 +195,18 @@ class Picarx(object):
 
     def backward(self, speed):
         current_angle = self.dir_current_angle
+        current_angle = -1*current_angle
+
         if current_angle != 0:
             abs_current_angle = abs(current_angle)
             if abs_current_angle > 40:
                 abs_current_angle = 40
-            power_scale = (100 - abs_current_angle) / 100.0 
-            if (current_angle / abs_current_angle) > 0:
+
+            turnRads = current_angle*math.pi/180
+            r = 4/math.tan(turnRads)
+
+            power_scale = (r-2)/(r+2)
+            if current_angle > 0:
                 self.set_motor_speed(1, -1*speed)
                 self.set_motor_speed(2, speed * power_scale)
             else:
@@ -212,12 +218,18 @@ class Picarx(object):
 
     def forward(self, speed):
         current_angle = self.dir_current_angle
+        current_angle = -1*current_angle
+
         if current_angle != 0:
             abs_current_angle = abs(current_angle)
             if abs_current_angle > 40:
                 abs_current_angle = 40
-            power_scale = (100 - abs_current_angle) / 100.0
-            if (current_angle / abs_current_angle) > 0:
+
+            turnRads = current_angle*math.pi/180
+            r = 4/math.tan(turnRads)
+
+            power_scale = (r-2)/(r+2)
+            if current_angle > 0:
                 self.set_motor_speed(1, 1*speed * power_scale)
                 self.set_motor_speed(2, -speed) 
             else:
