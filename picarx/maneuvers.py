@@ -96,7 +96,7 @@ def kTurnLeft(car):
 	time.sleep(3)
 	car.stop()
 	car.set_dir_servo_angle(0)
-	car.forward(50)
+	car.forward(100)
 	time.sleep(1)
 
 if __name__ == "__main__":
