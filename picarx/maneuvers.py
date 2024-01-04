@@ -44,6 +44,7 @@ def goForward(car):
 	car.set_dir_servo_angle(0)
 	car.forward(70)
 	time.sleep(2)
+	car.stop()
 
 def veerRight(car):
 	car.stop()
