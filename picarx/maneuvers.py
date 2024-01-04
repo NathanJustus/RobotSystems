@@ -10,7 +10,7 @@ def parkRight(car):
 
 	angleRange = [-30,26]
 	car.set_dir_servo_angle(angleRange[0])
-	time.sleep(0.5)
+	time.sleep(0.1)
 
 	car.backward(50)
 	for i in range(angleRange[0],angleRange[1]):
@@ -29,7 +29,7 @@ def parkLeft(car):
 
 	angleRange = [30,-26]
 	car.set_dir_servo_angle(angleRange[0])
-	time.sleep(0.5)
+	time.sleep(0.1)
 
 	car.backward(50)
 	for i in range(angleRange[0],angleRange[1],-1):
@@ -39,8 +39,67 @@ def parkLeft(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
 
+def goForward(car):
+	car.stop()
+	car.set_dir_servo_angle(0)
+	car.forward(100)
+	time.sleep(1)
+	car.stop()
+
+def veerRight(car):
+	car.stop()
+	car.set_dir_servo_angle(-30)
+	car.forward(100)
+	time.sleep(1)
+	car.stop()
+	car.set_dir_servo_angle(0)
+
+def veerLeft(car):
+	car.stop()
+	car.set_dir_servo_angle(30)
+	car.forward(100)
+	time.sleep(1)
+	car.stop()
+	car.set_dir_servo_angle(0)
+
+def goBackward(car):
+	car.stop()
+	car.set_dir_servo_angle(0)
+	car.backward(100)
+	time.sleep(1)
+	car.stop()
+
+def veerBackRight(car):
+	car.stop()
+	car.set_dir_servo_angle(-30)
+	car.backward(100)
+	time.sleep(1)
+	car.stop()
+	car.set_dir_servo_angle(0)
+
+def veerBackLeft(car):
+	car.stop()
+	car.set_dir_servo_angle(30)
+	car.backward(100)
+	time.sleep(1)
+	car.stop()
+	car.set_dir_servo_angle(0)
+
 if __name__ == "__main__":
 	car = pcx.Picarx()
 	parkRight(car)
-	time.sleep(2)
+	time.sleep(1)
 	parkLeft(car)
+	time.sleep(1)
+	goForward(car)
+	time.sleep(1)
+	veerBackRight(car)
+	time.sleep(1)
+	veerLeft(car)
+	time.sleep(1)
+	veerBackLeft(car)
+	time.sleep(1)
+	veerRight(car)
+	time.sleep(1)
+	goBackward(car)
+	time.sleep(1)
