@@ -83,7 +83,7 @@ def veerBackLeft(car):
 	car.backward(50)
 	time.sleep(1)
 	car.stop()
-	car.set_dir_servo_angle(0)S
+	car.set_dir_servo_angle(0)
 
 def kTurnLeft(car):
 	car.stop()
