@@ -208,8 +208,8 @@ class Picarx(object):
 
             power_scale = (r-2)/(r+2)
             if current_angle > 0:
-                self.set_motor_speed(1, -1*speed)
-                self.set_motor_speed(2, speed * power_scale)
+                self.set_motor_speed(1, -1*speed* power_scale)
+                self.set_motor_speed(2, speed)
             else:
                 self.set_motor_speed(1, -1*speed * power_scale)
                 self.set_motor_speed(2, speed )
