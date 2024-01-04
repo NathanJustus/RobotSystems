@@ -118,28 +118,27 @@ if __name__ == "__main__":
 	exitFlag = False
 	while not exitFlag:
 		command = input('Watchu need?\n')
-		match command:
-			case 'parkRight':
+		if command == 'parkRight':
 				parkRight(car)
-			case 'parkLeft':
+		elif command == 'parkLeft':
 				parkLeft(car)
-			case 'goForward':
+		elif command == 'goForward':
 				goForward(car)
-			case 'veerRight':
+		elif command == 'veerRight':
 				veerRight(car)
-			case 'veerLeft':
+		elif command == 'veerLeft':
 				veerLeft(car)
-			case 'goBackward':
+		elif command == 'goBackward':
 				goBackward(car)
-			case 'veerBackRight':
+		elif command == 'veerBackRight':
 				veerBackRight(car)
-			case 'veerBackLeft':
+		elif command == 'veerBackLeft':
 				veerBackLeft(car)
-			case 'kTurnLeft':
+		elif command == 'kTurnLeft':
 				kTurnLeft(car)
-			case 'kTurnRight':
+		elif command == 'kTurnRight':
 				kTurnRight(car)
-			case 'exit':
+		elif command == 'exit':
 				exitFlag = True
-			case _:
+		else:
 				print('Invalid command\n')
