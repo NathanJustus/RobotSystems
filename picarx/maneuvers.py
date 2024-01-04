@@ -1,11 +1,11 @@
 import picarx_improved as pcx
 import time
 
-def parkLeft(car):
+def parkRight(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
 	car.forward(50)
-	time.sleep(1)
+	time.sleep(2.5)
 	car.stop()
 
 	angleMag = 30
@@ -19,6 +19,7 @@ def parkLeft(car):
 		time.sleep(.05)
 
 	car.stop()
+	car.set_dir_servo_angle(0)
 
 
 if __name__ == "__main__":
