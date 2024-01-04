@@ -86,19 +86,18 @@ def veerBackLeft(car):
 	car.set_dir_servo_angle(0)
 
 def kTurnLeft(car):
-	waitTime = 2
 	car.stop()
 	car.set_dir_servo_angle(20)
 	car.forward(50)
-	time.sleep(waitTime)
+	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(-20)
 	car.backward(50)
-	time.sleep(waitTime)
+	time.sleep(3)
 	car.stop()
 	car.set_dir_servo_angle(0)
 	car.forward(50)
-	time.sleep(waitTime)
+	time.sleep(1)
 
 if __name__ == "__main__":
 	car = pcx.Picarx()
