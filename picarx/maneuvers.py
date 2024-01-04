@@ -4,7 +4,7 @@ import time
 def parkRight(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
-	car.forward(50)
+	car.forward(70)
 	time.sleep(1.9)
 	car.stop()
 
@@ -12,7 +12,7 @@ def parkRight(car):
 	car.set_dir_servo_angle(angleRange[0])
 	time.sleep(0.1)
 
-	car.backward(50)
+	car.backward(70)
 	for i in range(angleRange[0],angleRange[1]):
 		car.set_dir_servo_angle(i)
 		time.sleep(.05)
@@ -23,7 +23,7 @@ def parkRight(car):
 def parkLeft(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
-	car.forward(50)
+	car.forward(70)
 	time.sleep(1.9)
 	car.stop()
 
@@ -31,7 +31,7 @@ def parkLeft(car):
 	car.set_dir_servo_angle(angleRange[0])
 	time.sleep(0.1)
 
-	car.backward(50)
+	car.backward(70)
 	for i in range(angleRange[0],angleRange[1],-1):
 		car.set_dir_servo_angle(i)
 		time.sleep(.05)
@@ -42,13 +42,13 @@ def parkLeft(car):
 def goForward(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
-	car.forward(50)
+	car.forward(70)
 	time.sleep(2)
 
 def veerRight(car):
 	car.stop()
 	car.set_dir_servo_angle(-15)
-	car.forward(50)
+	car.forward(70)
 	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(0)
@@ -56,7 +56,7 @@ def veerRight(car):
 def veerLeft(car):
 	car.stop()
 	car.set_dir_servo_angle(15)
-	car.forward(50)
+	car.forward(70)
 	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(0)
@@ -64,14 +64,14 @@ def veerLeft(car):
 def goBackward(car):
 	car.stop()
 	car.set_dir_servo_angle(0)
-	car.backward(50)
+	car.backward(70)
 	time.sleep(2)
 	car.stop()
 
 def veerBackRight(car):
 	car.stop()
 	car.set_dir_servo_angle(-15)
-	car.backward(50)
+	car.backward(70)
 	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(0)
@@ -79,7 +79,7 @@ def veerBackRight(car):
 def veerBackLeft(car):
 	car.stop()
 	car.set_dir_servo_angle(15)
-	car.backward(50)
+	car.backward(70)
 	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(0)
@@ -87,30 +87,30 @@ def veerBackLeft(car):
 def kTurnLeft(car):
 	car.stop()
 	car.set_dir_servo_angle(20)
-	car.forward(50)
+	car.forward(70)
 	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(-20)
-	car.backward(50)
+	car.backward(70)
 	time.sleep(3)
 	car.stop()
 	car.set_dir_servo_angle(0)
-	car.forward(50)
+	car.forward(70)
 	time.sleep(1)
 	car.stop()
 
 def kTurnRight(car):
 	car.stop()
 	car.set_dir_servo_angle(-20)
-	car.forward(50)
+	car.forward(70)
 	time.sleep(2)
 	car.stop()
 	car.set_dir_servo_angle(20)
-	car.backward(50)
+	car.backward(70)
 	time.sleep(3)
 	car.stop()
 	car.set_dir_servo_angle(0)
-	car.forward(50)
+	car.forward(70)
 	time.sleep(1)
 	car.stop()
 
