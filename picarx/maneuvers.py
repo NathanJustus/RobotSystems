@@ -22,4 +22,5 @@ def parkRight(car):
 
 
 if __name__ == "__main__":
-	exitFlag = false
+	car = pcx.Picarx()
+	parkRight(car)
