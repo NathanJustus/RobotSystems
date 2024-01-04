@@ -98,6 +98,7 @@ def kTurnLeft(car):
 	car.set_dir_servo_angle(0)
 	car.forward(50)
 	time.sleep(1)
+	car.stop()
 
 def kTurnRight(car):
 	car.stop()
@@ -112,6 +113,7 @@ def kTurnRight(car):
 	car.set_dir_servo_angle(0)
 	car.forward(50)
 	time.sleep(1)
+	car.stop()
 
 if __name__ == "__main__":
 	car = pcx.Picarx()
