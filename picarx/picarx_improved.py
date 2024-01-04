@@ -211,7 +211,6 @@ class Picarx(object):
                 self.set_motor_speed(1, -1*speed)
                 self.set_motor_speed(2, speed* power_scale)
             else:
-                logging.debug('Wheels pointed right')
                 self.set_motor_speed(1, -1*speed)
                 self.set_motor_speed(2, speed * power_scale)
         else:
