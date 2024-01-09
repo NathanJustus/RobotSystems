@@ -37,17 +37,11 @@ class GreyscaleSensorInterpreter():
         state = oldState
         
         if newDetects[1]:
-            state[2] = True
-            state[0] = False
-            state[4] = False
+            state = [False,False,True,False,False]
         elif newDetects[0]:
-            state[1] = True
-            state[0] = False
-            state[4] = False
+            state = [False,True,False,False,False]
         elif newDetects[2]:
-            state[3] = True
-            state[0] = False
-            state[4] = False
+            state = [False,False,False,True,False]
             
         if lostDetects[0]:
             if oldState[1] and not newDetects[1]:
