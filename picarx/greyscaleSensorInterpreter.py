@@ -70,15 +70,9 @@ class GreyscaleSensorInterpreter():
             return -1
         
         if state[1]:
-            if state[2]:
-                return .25
-            else:
-                return .5
+            return .5
         if state[3]:
-            if state[2]:
-                return -.25
-            else:
-                return .5
+            return -.5
             
         return 0
         
