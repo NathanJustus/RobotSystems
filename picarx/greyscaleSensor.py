@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-
-import picarx_improved as pc
-import time
-
-mycar = pc.Picarx()
-
-while True:
-    print(mycar.get_grayscale_data())
-    time.sleep(0.25)
+class GreyscaleSensor():
     
+    def __init__(self,car):
+        self.mycar = car
+    
+    def readSensors(self):
+        return self.mycar.get_grayscale_data()

@@ -6,7 +6,7 @@ import numpy as np
 
 class GreyscaleSensorInterpreter():
 
-    def __init__(self,sens=30,polarity='tapeDarker'):
+    def __init__(self,sens=25,polarity='tapeDarker'):
         self.tapeState = [False,False,True,False,False]
         self.sensitivity = sens
         self.lastReading = [0,0,0]
