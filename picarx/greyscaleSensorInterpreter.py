@@ -84,12 +84,12 @@ class GreyscaleSensorInterpreter():
         
 if __name__ == "__main__":  
     car = pc.Picarx()
-    sens = GreyscaleSensorInterpreter(20,'tapeDarker')
+    sens = GreyscaleSensorInterpreter(25,'tapeDarker')
     while True:
         reading = car.get_grayscale_data()
         sens.updateState(reading)
         state = sens.getCarPosition()
         
         #print('Greyscale Reading: '+ str(reading) + '\t\t' + 'State: '+str(state))
-        time.sleep(0.1)
+        time.sleep(0.25)
     
