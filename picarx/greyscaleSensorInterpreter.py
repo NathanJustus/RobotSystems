@@ -56,6 +56,7 @@ class GreyscaleSensorInterpreter():
                 state[3] = False
                 
         self.tapeState = state
+        print(state)
         
     def getCarPosition(self):
         
@@ -87,6 +88,6 @@ if __name__ == "__main__":
         sens.updateState(reading)
         state = sens.getCarPosition()
         
-        print('Greyscale Reading: '+ str(reading) + '\t\t' + 'State: '+str(state))
+        #print('Greyscale Reading: '+ str(reading) + '\t\t' + 'State: '+str(state))
         time.sleep(0.1)
     
