@@ -37,10 +37,16 @@ class GreyscaleSensorInterpreter():
         
         if newDetects[1]:
             state[2] = True
+            state[0] = False
+            state[4] = False
         elif newDetects[0]:
             state[1] = True
+            state[0] = False
+            state[4] = False
         elif newDetects[2]:
             state[3] = True
+            state[0] = False
+            state[4] = False
             
         if lostDetects[0]:
             if oldState[1] and not newDetects[1]:
@@ -56,6 +62,7 @@ class GreyscaleSensorInterpreter():
                 state[3] = False
                 
         self.tapeState = state
+        print(diff)
         print(state)
         
     def getCarPosition(self):
