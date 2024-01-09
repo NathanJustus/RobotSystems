@@ -12,9 +12,9 @@ class GreyscaleSensorInterpreter():
         self.lastReading = [0,0,0]
         
         if polarity == 'tapeDarker':
-            self.polarity = 1
-        elif polarity == 'tapeLighter':
             self.polarity = -1
+        elif polarity == 'tapeLighter':
+            self.polarity = 1
         else:
             raise ValueError('Polarity must be either "tapeDarker" or "tapeLighter".')
 
