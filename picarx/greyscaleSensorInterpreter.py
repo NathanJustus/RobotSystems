@@ -25,6 +25,8 @@ class GreyscaleSensorInterpreter():
             self.lastReading = dataReading
             pass
         
+        print(dataReading)
+        
         dr = np.array(dataReading)
         diff = lr - dr
         diff = diff*self.polarity
