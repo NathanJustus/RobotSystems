@@ -232,6 +232,7 @@ class Picarx(object):
             r = 4/math.tan(turnRads)
 
             power_scale = (r-2)/(r+2)
+            power_scale = power_scale*1.25
             if current_angle > 0:
                 self.set_motor_speed(1, 1*speed)
                 self.set_motor_speed(2, -speed * power_scale*frictionPowerScale) 
