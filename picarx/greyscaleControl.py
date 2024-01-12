@@ -33,4 +33,4 @@ if __name__ == "__main__":
         error = interpreter.getCarPosition()
         controller.doControl(error)
         
-        time.sleep(0.25)
+        time.sleep(0.01)
