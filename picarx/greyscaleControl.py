@@ -32,5 +32,5 @@ if __name__ == "__main__":
         interpreter.updateState(rawData)
         error = interpreter.getCarPosition()
         controller.doControl(error)
-        car.forward(30)
+        car.forward(40)
         time.sleep(0.01)
