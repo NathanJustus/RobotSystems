@@ -221,7 +221,7 @@ class Picarx(object):
         current_angle = self.dir_current_angle
         current_angle = -1*current_angle
         
-        frictionPowerScale = 1.2
+        frictionPowerScale = 1.05
 
         if current_angle != 0:
             abs_current_angle = abs(current_angle)
