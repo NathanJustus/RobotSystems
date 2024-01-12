@@ -24,7 +24,7 @@ class GreyscaleController():
 if __name__ == "__main__":
     car = pc.Picarx()
     sensor = GS(car)
-    interpreter = GSI(100,'tapeDarker')
+    interpreter = GSI(80,'tapeDarker')
     controller = GreyscaleController(car,30)
     
     while(True):
@@ -32,5 +32,5 @@ if __name__ == "__main__":
         interpreter.updateState(rawData)
         error = interpreter.getCarPosition()
         controller.doControl(error)
-        car.forward(40)
+        car.forward(35)
         time.sleep(0.01)
