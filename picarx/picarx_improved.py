@@ -220,6 +220,8 @@ class Picarx(object):
     def forward(self, speed):
         current_angle = self.dir_current_angle
         current_angle = -1*current_angle
+        
+        frictionPowerScale = 1.2
 
         if current_angle != 0:
             abs_current_angle = abs(current_angle)
@@ -231,13 +233,13 @@ class Picarx(object):
 
             power_scale = (r-2)/(r+2)
             if current_angle > 0:
-                self.set_motor_speed(1, 1*speed)
+                self.set_motor_speed(1, 1*speed*frictionPowerScale)
                 self.set_motor_speed(2, -speed * power_scale) 
             else:
-                self.set_motor_speed(1, speed)
+                self.set_motor_speed(1, speed*frictionPowerScale)
                 self.set_motor_speed(2, -1*speed* power_scale)
         else:
-            self.set_motor_speed(1, speed)
+            self.set_motor_speed(1, speed*frictionPowerScale)
             self.set_motor_speed(2, -1*speed)
 
     def stop(self):
