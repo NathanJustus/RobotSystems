@@ -3,6 +3,7 @@
 import picarx_improved as pc
 import time
 import numpy as np
+import atexit
 
 from greyscaleSensor import GreyscaleSensor as GS
 from greyscaleSensorInterpreter import GreyscaleSensorInterpreter as GSI
@@ -26,6 +27,7 @@ if __name__ == "__main__":
     sensor = GS(car)
     interpreter = GSI(80,'tapeDarker')
     controller = GreyscaleController(car,30)
+    atexit.register(car.stop())
     
     while(True):
         rawData = sensor.readSensors()
