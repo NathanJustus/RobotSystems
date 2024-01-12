@@ -25,7 +25,7 @@ if __name__ == "__main__":
     car = pc.Picarx()
     sensor = GS(car)
     interpreter = GSI(75,'tapeDarker')
-    controller = GreyscaleController(car,35)
+    controller = GreyscaleController(car,30)
     
     while(True):
         rawData = sensor.readSensors()
