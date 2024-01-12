@@ -24,7 +24,7 @@ class GreyscaleController():
 if __name__ == "__main__":
     car = pc.Picarx()
     sensor = GS(car)
-    interpreter = GSI(70,'tapeDarker')
+    interpreter = GSI(85,'tapeDarker')
     controller = GreyscaleController(car,30)
     
     while(True):
