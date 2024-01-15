@@ -2,6 +2,8 @@ from time import sleep
 from picamera import PiCamera
 from io import BytesIO
 from PIL import Image
+import cv2 as cv
+from matplotlib import pyplot as plt
 
 camStream = BytesIO()
 cam = PiCamera()
@@ -12,6 +14,7 @@ for i in range(3):
 	cam.capture(camStream,format='jpeg')
 	camStream.seek(0)
 	img = Image.open(camStream)
+	img = cv.imread(img)
 	print(img)
 	print('\n')
 	sleep(1)
