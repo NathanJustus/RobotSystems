@@ -19,20 +19,16 @@ for i in range(nPics):
 	img = cv.imdecode(file_bytes,cv.IMREAD_COLOR)
 	camStream.seek(0)
 
-	crop = img[225:300,125:325]
+	crop = img[225:300,125:275]
 	gray=cv.cvtColor(crop,cv.COLOR_BGR2GRAY)
 	edges = cv.Canny(gray,100,200)
 	im2,contours = cv.findContours(edges,cv.RETR_CCOMP,cv.CHAIN_APPROX_SIMPLE)
 	
-	C = None
-	if contours is not None and len(contours)>0:
-		C = max(contours,key=cv.contourArea)
-
-	print(C)
+	cv.drawContours(img,contours,-1,(0,255,0),3)
 
 	#subplotID = int('13'+str(i+1))
 	#plt.subplot(subplotID)
 	#plt.imshow(edges,cmap='gray')
 	#plt.title('Image '+str(i+1))
 
-plt.show()
+#plt.show()
