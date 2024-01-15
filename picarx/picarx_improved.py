@@ -70,7 +70,7 @@ class Picarx(object):
         #self.cam_pan_cali_val = float(self.config_flie.get("picarx_cam_pan_servo", default_value=0))
         #self.cam_tilt_cali_val = float(self.config_flie.get("picarx_cam_tilt_servo", default_value=0))
         self.dir_cali_val = 3
-        self.cam_pan_cali_val = -7
+        self.cam_pan_cali_val = -17
         self.cam_tilt_cali_val = 8
         # set servos to init angle
         self.dir_servo_pin.angle(self.dir_cali_val)
