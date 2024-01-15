@@ -14,4 +14,4 @@ for i in range(3):
 	img = Image.open(camStream)
 	print(img)
 	print('\n')
-	time.sleep(1)
+	sleep(1)
