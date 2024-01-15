@@ -4,7 +4,7 @@ from picamera import PiCamera
 
 camStream = BytesIO()
 cam = PiCamera()
-cams.start_preview()
+cam.start_preview()
 sleep(2)
 
 img = cam.capture(camStream,'jpeg')
