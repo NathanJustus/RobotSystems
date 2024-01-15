@@ -1,4 +1,5 @@
 from time import sleep
+from datetime import datetime
 from picamera import PiCamera
 from io import BytesIO
 from PIL import Image
@@ -17,6 +18,9 @@ for i in range(3):
 	file_bytes = np.asarray(bytearray(camStream.read()),dtype=np.uint8)
 	img = cv.imdecode(file_bytes,cv.IMREAD_COLOR)
 	camStream.seek(0)
+	now = datetime.now()
+	current_time = now.strftime("%H:%M:%S")
+	print(current_time)
 	
 	subplotID = int('13'+str(i+1))
 	plt.subplot(subplotID)
