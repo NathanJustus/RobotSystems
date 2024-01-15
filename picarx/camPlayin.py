@@ -22,7 +22,7 @@ for i in range(nPics):
 	crop = img[225:300,125:325]
 	gray=cv.cvtColor(crop,cv.COLOR_BGR2GRAY)
 	edges = cv.Canny(gray,100,200)
-	im2,contours,heirarchy = cv.findContours(edges,cv.RETR_CCOMP,cv.CHAIN_APPROX_SIMPLE)
+	im2,contours = cv.findContours(edges,cv.RETR_CCOMP,cv.CHAIN_APPROX_SIMPLE)
 	
 	C = None
 	if contours is not None and len(contours)>0:
