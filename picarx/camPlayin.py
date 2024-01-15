@@ -16,6 +16,11 @@ for i in range(3):
 	camStream.seek(0)
 	file_bytes = np.asarray(bytearray(camStream.read()),dtype=np.uint8)
 	img = cv.imdecode(file_bytes,cv.IMREAD_COLOR)
-	print(img)
-	print('\n')
-	sleep(1)
+	camStream.seek(0)
+	
+	subplotID = int('13'+str(i+1))
+	plt.subplot(subplotID)
+	plt.imshow(img,cmap='gray')
+	plt.title('Image '+str(i+1))
+
+plt.show()
