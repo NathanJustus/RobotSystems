@@ -3,6 +3,7 @@ from picamera import PiCamera
 from io import BytesIO
 import cv2 as cv
 from matplotlib import pyplot as plt
+import numpy as np
 
 camStream = BytesIO()
 cam = PiCamera()
