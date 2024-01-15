@@ -11,7 +11,7 @@ sleep(2)
 for i in range(3):
 	cam.capture(camStream,format='jpeg')
 	camStream.seek(0)
-	img = Image.open(stream)
+	img = Image.open(camStream)
 	print(img)
 	print('\n')
 	time.sleep(1)
