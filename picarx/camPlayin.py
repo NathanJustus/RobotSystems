@@ -18,9 +18,9 @@ for i in range(3):
 	img = cv.imdecode(file_bytes,cv.IMREAD_COLOR)
 	camStream.seek(0)
 
-	crop = img[150:300,200:300]
+	crop = img[225:300,125:325]
 	gray=cv.cvtColor(crop,cv.COLOR_BGR2GRAY)
-	edges = cv.Canny(gray,50,150)
+	edges = cv.Canny(gray,100,200)
 	
 	subplotID = int('13'+str(i+1))
 	plt.subplot(subplotID)
