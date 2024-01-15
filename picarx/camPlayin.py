@@ -7,6 +7,7 @@ import numpy as np
 
 camStream = BytesIO()
 cam = PiCamera()
+cam.resolution = (400,300)
 cam.start_preview()
 sleep(2)
 
@@ -17,7 +18,9 @@ for i in range(3):
 	img = cv.imdecode(file_bytes,cv.IMREAD_COLOR)
 	camStream.seek(0)
 
-	edges = cv.Canny(img,100,200)
+	crop = img[150:300,200:300]
+	gray=cv.cvtColor(crop,cv.COLOR_BGR2GRAY)
+	edges = cv.Canny(gray,50,150)
 	
 	subplotID = int('13'+str(i+1))
 	plt.subplot(subplotID)
