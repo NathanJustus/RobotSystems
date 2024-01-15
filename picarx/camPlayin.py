@@ -1,11 +1,11 @@
-from io import BytesIO
 from time import sleep
-from picamera import PiCamera
+from picamera import PiCamera, CircularIO
 
-camStream = BytesIO()
+camStream = CircularIO()
 cam = PiCamera()
 cam.start_preview()
 sleep(2)
 
-img = cam.capture(camStream,'jpeg')
+cam.capture(camStream,'jpeg')
+img = camStream.array()
 print(img)
