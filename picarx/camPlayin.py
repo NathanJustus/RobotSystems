@@ -40,15 +40,15 @@ class PictureTaker():
 if __name__ == "__main__":
 	picTaker = PictureTaker()
 
-	#Grab cropped 
-	edge = picTaker.takePicture()
-	crop = picTaker.lastCrop
-	plt.subplot(211)
-	plt.imshow(crop,cmap='gray')
-	plt.subplot(212)
-	plt.imshow(edge,cmap='gray')
+	while True:
+		edge = picTaker.takePicture()
+		crop = picTaker.lastCrop
+		plt.subplot(211)
+		plt.imshow(crop,cmap='gray')
+		plt.subplot(212)
+		plt.imshow(edge,cmap='gray')
 
-	#Plot images, then pause for 3 seconds
-	plt.show(block=False)
-	plt.pause(3)
-	plt.close()
+		#Plot images, then pause for 3 seconds
+		plt.show(block=False)
+		plt.pause(3)
+		plt.close()
