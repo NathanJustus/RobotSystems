@@ -1,34 +1,46 @@
-from time import sleep
+import time
 from picamera import PiCamera
 from io import BytesIO
 import cv2 as cv
 from matplotlib import pyplot as plt
 import numpy as np
 
-camStream = BytesIO()
-cam = PiCamera()
-cam.resolution = (400,300)
-cam.start_preview()
-sleep(2)
+#Class to handle repeated picture taking using Raspberry Pi
+class PictureTaker():
 
-nPics = 1
-for i in range(nPics):
-	cam.capture(camStream,format='jpeg')
-	camStream.seek(0)
-	file_bytes = np.asarray(bytearray(camStream.read()),dtype=np.uint8)
-	img = cv.imdecode(file_bytes,cv.IMREAD_COLOR)
-	camStream.seek(0)
+	#Initialize camera and data stream
+	def __init__(self):
+		self.camera = PiCamera()
+		self.camera.resolution = (400,300)
+		self.camStream = BytesIO()
+		self.camera.start_preview()
+		time.sleep(2)
 
-	crop = img[225:300,125:275]
-	gray=cv.cvtColor(crop,cv.COLOR_BGR2GRAY)
-	edges = cv.Canny(gray,100,200)
-	im2,contours = cv.findContours(edges,cv.RETR_CCOMP,cv.CHAIN_APPROX_SIMPLE)
-	
-	cv.drawContours(img,contours,-1,(0,255,0),3)
+	#Take a picture, do some small preprocessing, and return picture data
+	def takePicture(self):
+		#Snag picture and write to stream
+		self.camera.capture(self.camStream,format='jpeg')
+		#Rewind stream to start of picture
+		self.camStream.seek(0)
+		#Convert stream data to numpy uint8 array
+		file_bytes = np.asarray(bytearray(self.camStream.read()),dtype=np.uint8)
+		#Convert numpy array to OpenCV structure
+		img = cv.imdecode(file_bytes,cv.IMREAD_COLOR)
 
-	#subplotID = int('13'+str(i+1))
-	#plt.subplot(subplotID)
-	#plt.imshow(edges,cmap='gray')
-	#plt.title('Image '+str(i+1))
+		#Crop image to bottom third and middle half where line probably is
+		croppedImg = img[200:300,100:300]
+		#To grayscale
+		grayImg = cv.cvtColor(croppedImg,cv.COLOR_BGR2GRAY)
+		#Find edges (might have to mess with min/max thresholds)
+		self.lastEdges = cv.Canny(grayImg,100,200)
+		return self.lastEdges
 
-#plt.show()
+
+if __name__ == "__main__":
+	picTaker = PictureTaker()
+
+	while True:
+		img = picTaker.takePicture()
+		plt.imshow(img)
+		plt.show()
+		time.sleep(2)
