@@ -29,6 +29,7 @@ class PictureTaker():
 
 		#Crop image to bottom third and middle half where line probably is
 		croppedImg = img[200:300,100:300]
+		self.lastCrop = croppedImg
 		#To grayscale
 		grayImg = cv.cvtColor(croppedImg,cv.COLOR_BGR2GRAY)
 		#Find edges (might have to mess with min/max thresholds)
@@ -40,6 +41,10 @@ if __name__ == "__main__":
 	picTaker = PictureTaker()
 
 	img = picTaker.takePicture()
+	crop = picTaker.lastCrop
+	plt.subplot(211)
+	plt.imshow(crop,cmap='gray')
+	plt.subplot(212)
 	plt.imshow(img,cmap='gray')
 	plt.show()
 	time.sleep(2)
