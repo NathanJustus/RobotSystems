@@ -30,7 +30,7 @@ class PictureTaker():
 		self.camStream.seek(0)
 
 		#Crop image to bottom third and middle half where line probably is
-		croppedImg = img[200:300,100:300]
+		croppedImg = img[150:300,100:300]
 		self.lastCrop = croppedImg
 		#To grayscale
 		grayImg = cv.cvtColor(croppedImg,cv.COLOR_BGR2GRAY)
