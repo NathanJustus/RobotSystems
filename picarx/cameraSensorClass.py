@@ -29,7 +29,7 @@ class PictureTaker():
 		#Rewind back to start of stream for writing new pic
 		self.camStream.seek(0)
 
-		#Crop image to bottom third and middle half where line probably is
+		#Crop image to bottom half and middle half where line probably is
 		croppedImg = img[150:300,100:300]
 		self.lastCrop = croppedImg
 		#To grayscale
