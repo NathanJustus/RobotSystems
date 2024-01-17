@@ -35,7 +35,7 @@ class PictureTaker():
 		#To grayscale
 		grayImg = cv.cvtColor(croppedImg,cv.COLOR_BGR2GRAY)
 		#Find edges (might have to mess with min/max thresholds)
-		self.lastEdges = cv.Canny(grayImg,50,150)
+		self.lastEdges = cv.Canny(grayImg,75,125)
 		return self.lastEdges
 
 
