@@ -48,3 +48,4 @@ if __name__ == "__main__":
 	plt.imshow(img,cmap='gray')
 	plt.show()
 	time.sleep(2)
+	plt.close()
