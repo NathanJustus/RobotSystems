@@ -39,8 +39,7 @@ class PictureTaker():
 if __name__ == "__main__":
 	picTaker = PictureTaker()
 
-	while True:
-		img = picTaker.takePicture()
-		plt.imshow(img)
-		plt.show()
-		time.sleep(2)
+	img = picTaker.takePicture()
+	plt.imshow(img,cmap='gray')
+	plt.show()
+	time.sleep(2)
