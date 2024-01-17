@@ -26,6 +26,8 @@ class PictureTaker():
 		file_bytes = np.asarray(bytearray(self.camStream.read()),dtype=np.uint8)
 		#Convert numpy array to OpenCV structure
 		img = cv.imdecode(file_bytes,cv.IMREAD_COLOR)
+		#Rewind back to start of stream for writing new pic
+		self.camStream.seek(0)
 
 		#Crop image to bottom third and middle half where line probably is
 		croppedImg = img[200:300,100:300]
