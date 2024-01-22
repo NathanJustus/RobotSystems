@@ -613,10 +613,16 @@ class Grayscale_Module(object):
     REFERENCE_DEFAULT = [1000]*3
 
     def __init__(self, pin0, pin1, pin2, reference=None):
+        
         if isinstance(pin0,str):
             self.chn_0 = ADC(pin0)
             self.chn_1 = ADC(pin1)
             self.chn_2 = ADC(pin2)
+        else:
+            self.chn_0 = ADC('A0')
+            self.chn_1 = ADC('A1')
+            self.chn_2 = ADC('A2')
+            
         if reference is None:
             self.reference = self.REFERENCE_DEFAULT
         else:
@@ -650,6 +656,9 @@ class Grayscale_Module(object):
         adc_value_list.append(self.chn_1.read())
         adc_value_list.append(self.chn_2.read())
         return adc_value_list
+    
+    def read(self):
+        return self.get_grayscale_data()
 
 def run_command(cmd):
     import subprocess

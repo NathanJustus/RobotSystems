@@ -25,7 +25,7 @@ class GreyscaleSensorInterpreter():
             self.lastReading = dataReading
             pass
         
-        print(dataReading)
+        #print(dataReading)
         
         dr = np.array(dataReading)
         diff = lr - dr
@@ -75,6 +75,20 @@ class GreyscaleSensorInterpreter():
             return -.5
             
         return 0
+    
+    def consumeProduce(self,gsDataBus,gsErrorBus,delay,exitEvent):
+        while True:
+            print('Interpreted Data')
+            dataReading = gsDataBus.read()
+            self.updateState(dataReading)
+            error = self.getCarPosition()
+            gsErrorBus.write(error)
+            
+            if exitEvent.isSet():
+                break
+            
+            time.sleep(delay)
+        
         
 if __name__ == "__main__":  
     car = pc.Picarx()

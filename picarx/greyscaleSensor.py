@@ -1,3 +1,6 @@
+import picarBus
+import time
+
 # -*- coding: utf-8 -*-
 class GreyscaleSensor():
     
@@ -6,3 +9,12 @@ class GreyscaleSensor():
     
     def readSensors(self):
         return self.mycar.get_grayscale_data()
+    
+    def produceData(self,gsDataBus,delay):
+        while True:
+            
+            vals = self.readSensors()
+            gsDataBus.write(vals)
+            
+            print(f'Read Data:{vals}')
+            time.sleep(delay)
